@@ -21,7 +21,7 @@
             display: inline-block;
         }
 
-        .close {
+        .remove {
             width: 1em;
             height: 1em;
             background-image: url(https://raw.githubusercontent.com/ok-technopolis-autumn-2017/todo-app-design/master/icons/close.png);
@@ -64,18 +64,10 @@
             background-color: #f5f5f5;
         }
 
-        .item:hover .close {
+        .item:hover .remove {
             display: inline-block;
         }
 
-
-        #count-of-items{
-            display: inline-block;
-        }
-        #last-action{
-            display: inline-block;
-
-        }
         #navigation {
             text-align: center;
             display: inline-block;
@@ -91,37 +83,41 @@
 
         <div class="item">
             <div class="arrow"></div>
-            <input type="text" placeholder="What needs to be done?">
+            <input type="text" id="input-row" placeholder="What needs to be done?">
         </div>
 
         <div class="item">
-            <div class="circle"></div>
+            <input type="checkbox">
+            <label class="circle"></label>
             <div class="item-text">HTML</div>
-            <div class="close"></div>
+            <div class="remove"></div>
         </div>
         <div class="item">
-            <div class="circle"></div>
+            <input type="checkbox">
+            <label class="circle"></label>
             <div class="item-text">CSS</div>
-            <div class="close"></div>
+            <div class="remove"></div>
         </div>
         <div class="item">
-            <div class="circle"></div>
+            <input type="checkbox">
+            <label class="circle"></label>
             <div class="item-text">JS</div>
-            <div class="close"></div>
+            <div class="remove"></div>
         </div>
         <div class="item">
-            <div class="circle"></div>
+            <input type="checkbox">
+            <label class="circle"></label>
             <div class="item-text">JS tools</div>
-            <div class="close"></div>
+            <div class="remove"></div>
         </div>
         <div class="list-footer">
-            <div id="count-of-items"> 3 items left</div>
+            <span id="count-of-items"> 3 items left</span>
             <div id="navigation">
-            <input type="radio"  title="All" checked> All
-            <input type="radio" title="Active"> Active
-            <input type="radio" title="Completed"> Completed
+                <input type="radio" name="nav" title="All" checked> All
+                <input type="radio" name="nav" title="Active"> Active
+                <input type="radio" name="nav" title="Completed"> Completed
             </div>
-            <div id="last-action"> Clear completed</div>
+            <span id="last-action"> Clear completed</span>
         </div>
     </div>
 </div>
