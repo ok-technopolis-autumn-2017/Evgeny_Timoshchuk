@@ -4,35 +4,14 @@
     <meta charset="UTF-8">
     <title>todos</title>
     <style>
-        body {
-            background-color: #f5f5f5;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .arrow {
+        .remove {
             width: 2em;
-            height: 1em;
-            background-image: url(https://raw.githubusercontent.com/ok-technopolis-autumn-2017/todo-app-design/master/icons/select-all.png);
-            background-repeat: no-repeat;
-            background-position: 1.5%;
-            display: inline-block;
-        }
-
-        .close {
-            width: 1em;
-            height: 1em;
+            height: 2em;
             background-image: url(https://raw.githubusercontent.com/ok-technopolis-autumn-2017/todo-app-design/master/icons/close.png);
             background-repeat: no-repeat;
             background-position: 1.5%;
             text-align: right;
             display: none;
-        }
-
-        .item-text {
-            display: inline-block;
         }
 
         .circle {
@@ -46,38 +25,12 @@
             display: inline-block;
         }
 
-        .list {
-            margin: auto;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            left: 300px;
-            width: 40%;
-        }
-
-        .item {
-            border: 1px solid #e0e0e0;
-            border-top: 0;
-        }
-
         .item:hover {
             cursor: pointer;
             background-color: #f5f5f5;
         }
 
-        .item:hover .close {
-            display: inline-block;
-        }
-
-
-        #count-of-items{
-            display: inline-block;
-        }
-        #last-action{
-            display: inline-block;
-
-        }
-        #navigation {
-            text-align: center;
+        .item:hover .remove {
             display: inline-block;
         }
 
@@ -85,44 +38,51 @@
 </head>
 <body>
 <div class="main-wrapper">
-
-    <h1>todos</h1>
-    <div class="list">
-
-        <div class="item">
-            <div class="arrow"></div>
-            <input type="text" placeholder="What needs to be done?">
+    <div class="list-header" role="banner">
+        <h1>todos</h1>
+    </div>
+    <div class="list-body" role="main">
+        <div class="input-row">
+            <button id="select-all"><img
+                    src="https://raw.githubusercontent.com/ok-technopolis-autumn-2017/todo-app-design/master/icons/select-all.png">
+            </button>
+            <input type="text" id="input-row" placeholder="What needs to be done?">
         </div>
-
-        <div class="item">
-            <div class="circle"></div>
-            <div class="item-text">HTML</div>
-            <div class="close"></div>
-        </div>
-        <div class="item">
-            <div class="circle"></div>
-            <div class="item-text">CSS</div>
-            <div class="close"></div>
-        </div>
-        <div class="item">
-            <div class="circle"></div>
-            <div class="item-text">JS</div>
-            <div class="close"></div>
-        </div>
-        <div class="item">
-            <div class="circle"></div>
-            <div class="item-text">JS tools</div>
-            <div class="close"></div>
-        </div>
-        <div class="list-footer">
-            <div id="count-of-items"> 3 items left</div>
-            <div id="navigation">
-            <input type="radio"  title="All" checked> All
-            <input type="radio" title="Active"> Active
-            <input type="radio" title="Completed"> Completed
+        <div role="listbox">
+            <div class="item" role="listitem" aria-label="Дело 1">
+                <input type="checkbox" class="item-pointer">
+                <label class="circle" role="checkbox"></label>
+                <span class="item-text"> HTML</span>
+                <input class="remove" role="button" aria-hidden="true">
             </div>
-            <div id="last-action"> Clear completed</div>
+            <div class="item" role="listitem">
+                <input type="checkbox" class="item-pointer" aria-label="Дело 2">
+                <label class="circle"></label>
+                <span class="item-text"> CSS </span>
+                <input class="remove" role="button" aria-hidden="true">
+            </div>
+            <div class="item" role="listitem">
+                <input type="checkbox" class="item-pointer" aria-label="Дело 3">
+                <label class="circle"></label>
+                <span class="item-text"> JS </span>
+                <input class="remove" role="button" aria-hidden="true">
+            </div>
+            <div class="item" role="listitem">
+                <input type="checkbox" class="item-pointer" aria-label="Дело 4">
+                <label class="circle"></label>
+                <span class="item-text"> JS tools</span>
+                <input class="remove" role="button" aria-hidden="true">
+            </div>
         </div>
+    </div>
+    <div class="list-footer" role="contentinfo">
+        <span id="count-of-items" role="status"> 3 items left</span>
+        <div id="navigation" role="menuitemradio">
+            <input type="radio" name="nav" title="All" role="radio" checked> All
+            <input type="radio" name="nav" title="Active" role="radio"> Active
+            <input type="radio" name="nav" title="Completed" role="radio"> Completed
+        </div>
+        <input type="button" id="last-action" value="Clear completed" area-label="Удалить все выполненые задачи">
     </div>
 </div>
 </body>
