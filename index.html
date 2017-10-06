@@ -43,46 +43,50 @@
     </div>
     <div class="list-body" role="main">
         <div class="input-row">
-            <button id="select-all"><img
+            <button id="select-all"  area-label="Выделить все"><img
                     src="https://raw.githubusercontent.com/ok-technopolis-autumn-2017/todo-app-design/master/icons/select-all.png">
             </button>
-            <input type="text" id="input-row" placeholder="What needs to be done?">
+            <input type="text" id="input-row" autofocus placeholder="What needs to be done?">
         </div>
         <div role="listbox">
             <div class="item" role="listitem" aria-label="Дело 1">
-                <input type="checkbox" class="item-pointer">
-                <label class="circle" role="checkbox"></label>
+                <label class="circle" role="checkbox">
+                    <input type="checkbox" class="item-pointer">
+                </label>
                 <span class="item-text"> HTML</span>
                 <input class="remove" role="button" aria-hidden="true">
             </div>
-            <div class="item" role="listitem">
-                <input type="checkbox" class="item-pointer" aria-label="Дело 2">
-                <label class="circle"></label>
+            <div class="item" role="listitem" aria-label="Дело 2">
+                <label class="circle">
+                    <input type="checkbox" class="item-pointer">
+                </label>
                 <span class="item-text"> CSS </span>
                 <input class="remove" role="button" aria-hidden="true">
             </div>
-            <div class="item" role="listitem">
-                <input type="checkbox" class="item-pointer" aria-label="Дело 3">
-                <label class="circle"></label>
+            <div class="item" role="listitem" aria-label="Дело 3">
+                <label class="circle">
+                    <input type="checkbox" class="item-pointer">
+                </label>
                 <span class="item-text"> JS </span>
                 <input class="remove" role="button" aria-hidden="true">
             </div>
-            <div class="item" role="listitem">
-                <input type="checkbox" class="item-pointer" aria-label="Дело 4">
-                <label class="circle"></label>
+            <div class="item" role="listitem" aria-label="Дело 4">
+                <label class="circle">
+                    <input type="checkbox" class="item-pointer">
+                </label>
                 <span class="item-text"> JS tools</span>
                 <input class="remove" role="button" aria-hidden="true">
             </div>
         </div>
     </div>
     <div class="list-footer" role="contentinfo">
-        <span id="count-of-items" role="status"> 3 items left</span>
+        <span id="count-of-items" role="status"> 3 items left </span>
         <div id="navigation" role="menuitemradio">
-            <input type="radio" name="nav" title="All" role="radio" checked> All
-            <input type="radio" name="nav" title="Active" role="radio"> Active
-            <input type="radio" name="nav" title="Completed" role="radio"> Completed
+            <label class="radio-nav"> All <input type="radio" name="nav" value="All" role="radio" checked  area-label="Показать все"> </label>
+            <label class="radio-nav"> Active <input type="radio" name="nav" vale="Active" role="radio"  area-label="Показать активные"> </label>
+            <label class="radio-nav"> Completed <input type="radio" name="nav" value="Completed" role="radio"  area-label="Показать выполненные"> </label>
         </div>
-        <input type="button" id="last-action" value="Clear completed" area-label="Удалить все выполненые задачи">
+        <input type="button" id="last-action" value="Clear completed" area-label="Удалить все выполненые дела">
     </div>
 </div>
 </body>
