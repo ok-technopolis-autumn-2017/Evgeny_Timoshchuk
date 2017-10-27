@@ -33,60 +33,65 @@
         .item:hover .remove {
             display: inline-block;
         }
-
     </style>
 </head>
 <body>
 <div class="main-wrapper">
-    <div class="list-header" role="banner">
+    <div class="todo-header" role="banner">
         <h1>todos</h1>
     </div>
-    <div class="list-body" role="main">
-        <div class="input-row">
-            <button id="select-all"  area-label="Выделить все"><img
+    <div class="todo-body" role="main">
+        <div class="todo-input">
+            <button class="select-all" area-label="Отметить все как выполненные"><img
                     src="https://raw.githubusercontent.com/ok-technopolis-autumn-2017/todo-app-design/master/icons/select-all.png">
             </button>
-            <input type="text" id="input-row" autofocus placeholder="What needs to be done?">
+            <input type="text" id="input-row" autofocus placeholder="What needs to be done?"
+                   area-label="Поле добавления todo">
         </div>
-        <div role="listbox">
-            <div class="item" role="listitem" aria-label="Дело 1">
+
+        <div class="todo-list" role="listbox">
+            <div class="todo-item" role="listitem" aria-label="Дело 1">
                 <label class="circle" role="checkbox">
-                    <input type="checkbox" class="item-pointer">
+                    <input type="checkbox" class="todo-item_pointer">
                 </label>
-                <span class="item-text"> HTML</span>
-                <input type="button" class="remove"  role="button" aria-hidden="true">
+                <textarea type="text" class="todo-item_text"> HTML </textarea>
+                <input type="button" class="todo-item_remove" aria-label="Удалить элемент">
             </div>
-            <div class="item" role="listitem" aria-label="Дело 2">
+            <div class="todo-item" role="listitem" aria-label="Дело 2">
                 <label class="circle">
-                    <input type="checkbox" class="item-pointer">
+                    <input type="checkbox" class="todo-item_pointer">
                 </label>
-                <span class="item-text"> CSS </span>
-                <input type="button" class="remove" role="button" aria-hidden="true">
+                <textarea type="text" class="todo-item_text"> CSS </textarea>
+                <input type="button" class="todo-item_remove" aria-label="Удалить элемент">
             </div>
-            <div class="item" role="listitem" aria-label="Дело 3">
+            <div class="todo-item" role="listitem" aria-label="Дело 3">
                 <label class="circle">
-                    <input type="checkbox" class="item-pointer">
+                    <input type="checkbox" class="todo-item_pointer">
                 </label>
-                <span class="item-text"> JS </span>
-                <input type="button" class="remove" role="button" aria-hidden="true">
+                <textarea type="text" class="todo-item_text"> JS </textarea>
+                <input type="button" class="todo-item_remove" aria-label="Удалить элемент">
             </div>
-            <div class="item" role="listitem" aria-label="Дело 4">
+            <div class="todo-item" role="listitem" aria-label="Дело 4">
                 <label class="circle">
-                    <input type="checkbox" class="item-pointer">
+                    <input type="checkbox" class="todo-item_pointer">
                 </label>
-                <span class="item-text"> JS tools</span>
-                <input type="button" class="remove" role="button" aria-hidden="true">
+                <textarea type="text" class="todo-item_text"> JS tools </textarea>
+                <input type="button" class="todo-item_remove" aria-label="Удалить элемент">
             </div>
         </div>
     </div>
-    <div class="list-footer" role="contentinfo">
-        <span id="count-of-items" role="status"> 3 items left </span>
-        <div id="navigation" role="menuitemradio">
-            <label class="radio-nav"> All <input type="radio" name="nav" value="All" role="radio" checked  area-label="Показать все"> </label>
-            <label class="radio-nav"> Active <input type="radio" name="nav" vale="Active" role="radio"  area-label="Показать активные"> </label>
-            <label class="radio-nav"> Completed <input type="radio" name="nav" value="Completed" role="radio"  area-label="Показать выполненные"> </label>
+    <div class="todo-actions-bar" role="contentinfo">
+        <span class="todo-actions-bar_counter" role="status"> 3 items left </span>
+        <div class="todo-actions-bar_filters" role="menuitemradio">
+            <label class="todo-actions_filter"> All <input type="radio" name="filter" value="All" role="radio" checked
+                                                    area-label="Показать все"> </label>
+            <label class="todo-actions_filter"> Active <input type="radio" name="filter" vale="Active" role="radio"
+                                                       area-label="Показать активные"> </label>
+            <label class="todo-actions_filter"> Completed <input type="radio" name="filter" value="Completed" role="radio"
+                                                          area-label="Показать выполненные"> </label>
         </div>
-        <input type="button" id="last-action" value="Clear completed" area-label="Удалить все выполненые дела">
+        <input type="button" class="todo-actions-bar_clear-completed" value="Clear completed"
+               area-label="Удалить все выполненые дела">
     </div>
 </div>
 </body>
