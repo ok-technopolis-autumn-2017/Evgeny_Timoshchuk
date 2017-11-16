@@ -1,0 +1,27 @@
+$shadow-decoration:  0 2px 4px rgba(0, 0, 0, .2);
+
+.todo-body {
+    background: $c-white;
+    box-shadow: $shadow-decoration;
+    position: relative;
+    }
+
+    .todo-body:before,
+    .todo-body:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        background: $c-white;
+        box-shadow: $shadow-decoration;
+        z-index: -1;
+        }
+        .todo-body:before {
+            height: 10px;
+            left: $offset;
+            right: $offset;
+            }
+        .todo-body:after {
+            height: 5px;
+            left: $offset_half;
+            right: $offset_half;
+            }

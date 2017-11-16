@@ -1,0 +1,127 @@
+@import "../config/mixins/text.scss";
+
+$thin-gray-border: 1px solid #e0e0e0;
+
+.todo-list {
+    min-height: 300px;
+    border-bottom: $thin-gray-border;
+}
+
+.todo-item {
+    border-bottom: $thin-gray-border;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    @include animation-transition;
+}
+
+    .todo-item:hover {
+        cursor: pointer;
+        background-color: $c-gray-lightest;
+    }
+
+        .todo-item:hover .todo-item_remove {
+            display: block;
+        }
+
+        .todo-item_mark {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            float: left;
+            align-self: center;
+        }
+
+            .todo-item_mark:hover {
+                cursor: pointer;
+            }
+
+            .todo-item_mark_input-checkbox {
+                position: relative;
+                width: 32px;
+                height: 32px;
+            }
+
+                .todo-item_mark_input-checkbox_target {
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5em;
+                    z-index: 1;
+                }
+
+                    .todo-item_mark_input-checkbox_target:hover {
+                        cursor: pointer;
+                    }
+
+                    .todo-item_mark_input-checkbox_target:checked ~ .todo-item_mark_input-checkbox_visual {
+                        background-image: url('../../images/icons/completed.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border: 1px solid #76ccbc;
+                    }
+
+                .todo-item_mark_input-checkbox_visual {
+                    width: 30px;
+                    height: 30px;
+                    border: $thin-gray-border;
+                    background-color: $c-white;
+                    -moz-border-radius: 1em;
+                    -webkit-border-radius: 1em;
+                    border-radius: 5em;
+                    @include animation-transition;
+                }
+
+        .todo-item_remove {
+            width: 20px;
+            height: 22px;
+            align-self: center;
+            float: right;
+            border: 0;
+            position: relative;
+            display: none;
+            opacity: 0.3;
+            background: none;
+            outline: none;
+            @include animation-transition;
+        }
+            .todo-item_remove:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+
+
+            .todo-item_remove::before, .todo-item_remove::after {
+                position: absolute;
+                height: 20px;
+                width: 2px;
+                top: 0;
+                content: '';
+                background-color: $c-gray;
+            }
+
+                .todo-item_remove::before {
+                    transform: rotate(45deg);
+                }
+
+                .todo-item_remove::after {
+                    transform: rotate(-45deg);
+                }
+
+        .todo-item_text {
+            align-self: flex-start;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+            border: 0;
+            background: none;
+            color: $c-gray;
+            font-size: 24px;
+            font-weight: 200;
+            padding: 5px 15px 0px 15px;
+            outline: none;
+        }

@@ -1,0 +1,22 @@
+@import "config/globals.scss";
+
+@font-face {
+    font-family: MyFont;
+    src: url(../../public/dist/fonts/HelveticaNeueCyr-Thin.otf);
+}
+
+body, input, button, textarea, h1, h2, h3, h4, h5, h6 {
+    font-family: MyFont, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: $fs-little;
+}
+
+body {
+    background: $c-gray-light;
+}
+
+.todo-main-wrapper {
+    min-width: 280px;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

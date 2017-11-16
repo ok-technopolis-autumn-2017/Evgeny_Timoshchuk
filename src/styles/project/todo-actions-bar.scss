@@ -1,0 +1,42 @@
+.todo-actions-bar {
+    color: #888888;
+    text-align: center;
+    line-height: 25px;
+    vertical-align: baseline;
+    padding: $offset;
+}
+
+.todo-actions-bar_clear-completed-w {
+    float:right;
+}
+
+    .todo-actions-bar_clear-completed {
+        border: none;
+        background: none;
+        color: #888888;
+    }
+
+    .todo-actions-bar_counter {
+        float: left;
+        padding-left: $offset;
+    }
+
+    .todo-actions-bar_filters {
+        display: inline-block;
+    }
+
+        .todo-actions-bar_filter{
+            color: #888888;
+            background: $c-white;
+            border: 1px solid transparent;
+            line-height: 20px;
+            vertical-align: baseline;
+        }
+
+            .todo-actions-bar_filter:hover{
+                cursor: pointer;
+                color: #888888;
+                background: $c-white;
+                border-color: #ebdfdf;
+                border-radius: 2px;
+            }

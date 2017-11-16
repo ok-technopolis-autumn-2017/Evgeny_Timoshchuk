@@ -1,0 +1,69 @@
+.todo-add {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+    .todo-add:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .todo-add_select-all {
+        width: 64px;
+        height: 64px;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+        position: relative;
+    }
+
+        .todo-add_select-all_icon {
+            width: 24px;
+            height: 12px;
+            background: url('../../images/icons/select-all.png') no-repeat 0 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -6px -12px;
+            border: 0;
+            opacity: 0.8;
+        }
+            .todo-add_select-all_icon:hover {
+                cursor: pointer;
+            }
+            .todo-add_select-all_icon:active {
+                cursor: pointer;
+            }
+            .todo-add_select-all_icon:focus {
+                opacity: 1;
+                border: 0;
+                outline: none;
+            }
+
+    .todo-add_input-text-w {
+        overflow: hidden;
+    }
+
+        .todo-add_input-text {
+            width: 100%;
+            box-sizing: border-box;
+            border: 0;
+            background: none;
+            color: $c-gray;
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 200;
+            padding-right: $offset_3x;
+            margin-top: 14px;
+            outline: none;
+
+        }
+
+            .todo-add_input-text::placeholder {
+                color: #ccc;
+                font-style: italic;
+            }
+
+
